@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Ver Clientes"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:outputStylesheet name="css/jsfcrud.css"/>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewClientesLabel_idcliente}"/>
+                    <h:outputText value="#{clientesController.selected.idcliente}" title="Ver idCliente"/>
+                    <h:outputText value="#{bundle.ViewClientesLabel_nombre}"/>
+                    <h:outputText value="#{clientesController.selected.nombre}" title="Ver Nombre"/>
+                    <h:outputText value="#{bundle.ViewClientesLabel_apellidos}"/>
+                    <h:outputText value="#{clientesController.selected.apellidos}" title="Ver Apellidos"/>
+                    <h:outputText value="#{bundle.ViewClientesLabel_telefono}"/>
+                    <h:outputText value="#{clientesController.selected.telefono}" title="Ver Telefono"/>
+                    <h:outputText value="#{bundle.ViewClientesLabel_nit}"/>
+                    <h:outputText value="#{clientesController.selected.nit}" title="NIT"/>
+                    <h:outputText value="#{bundle.ViewClientesLabel_correoElectronico}"/>
+                    <h:outputText value="#{clientesController.selected.correoElectronico}" title="CorreoElectronico"/>
+                    <h:outputText value="#{bundle.ViewClientesLabel_idmesa}"/>
+                    <h:outputText value="#{clientesController.selected.idmesa}" title="Ver idMesa"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{clientesController.destroyAndView}" value="Eliminar"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="Editar"/>
+                <br />
+                <h:commandLink action="#{clientesController.prepareCreate}" value="Crear" />
+                <br />
+                <h:commandLink action="#{clientesController.prepareList}" value="Ver todos los clientes"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="Menu Clientes"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

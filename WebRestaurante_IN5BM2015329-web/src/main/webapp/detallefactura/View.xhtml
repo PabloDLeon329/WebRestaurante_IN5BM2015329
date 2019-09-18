@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Ver Detalle Factura"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:outputStylesheet name="css/jsfcrud.css"/>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewDetallefacturaLabel_cantidad}"/>
+                    <h:outputText value="#{detallefacturaController.selected.cantidad}" title="Ver Cantidad"/>
+                    <h:outputText value="#{bundle.ViewDetallefacturaLabel_precioventa}"/>
+                    <h:outputText value="#{detallefacturaController.selected.precioventa}" title="Ver PrecioVenta"/>
+                    <h:outputText value="#{bundle.ViewDetallefacturaLabel_costoTotal}"/>
+                    <h:outputText value="#{detallefacturaController.selected.costoTotal}" title="Ver CostoTotal"/>
+                    <h:outputText value="#{bundle.ViewDetallefacturaLabel_platos}"/>
+                    <h:outputText value="#{detallefacturaController.selected.platos}" title="Ver Platillos"/>
+                    <h:outputText value="#{bundle.ViewDetallefacturaLabel_facturas}"/>
+                    <h:outputText value="#{detallefacturaController.selected.facturas}" title="Ver Facturas"/>
+                    <h:outputText value="#{bundle.ViewDetallefacturaLabel_idcocinero}"/>
+                    <h:outputText value="#{detallefacturaController.selected.idcocinero}" title="Ver Cocinero"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{detallefacturaController.destroyAndView}" value="Eliminar"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="Editar"/>
+                <br />
+                <h:commandLink action="#{detallefacturaController.prepareCreate}" value="Crear" />
+                <br />
+                <h:commandLink action="#{detallefacturaController.prepareList}" value="Ver todos los detalles de factura"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="Menu DetalleFacturas"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

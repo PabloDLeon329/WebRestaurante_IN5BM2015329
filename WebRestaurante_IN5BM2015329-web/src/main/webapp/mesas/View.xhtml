@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Ver Mesas"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:outputStylesheet name="css/jsfcrud.css"/>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMesasLabel_idmesa}"/>
+                    <h:outputText value="#{mesasController.selected.idmesa}" title="Ver idMesa"/>
+                    <h:outputText value="#{bundle.ViewMesasLabel_idmesero}"/>
+                    <h:outputText value="#{mesasController.selected.idmesero}" title="Ver idMesero"/>
+                    <h:outputText value="#{bundle.ViewMesasLabel_idarea}"/>
+                    <h:outputText value="#{mesasController.selected.idarea}" title="Ver idArea"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mesasController.destroyAndView}" value="Eliminar"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="Editar"/>
+                <br />
+                <h:commandLink action="#{mesasController.prepareCreate}" value="Crear" />
+                <br />
+                <h:commandLink action="#{mesasController.prepareList}" value="Ver todas las mesas"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="Menu View"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

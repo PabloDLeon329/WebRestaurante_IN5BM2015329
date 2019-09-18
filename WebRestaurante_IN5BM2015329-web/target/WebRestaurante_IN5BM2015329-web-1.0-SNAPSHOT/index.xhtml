@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>San Jose Buenaventura</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <h1 class="h1"> Restaurante San Jose Buenaventura</h1>
+        <hr />
+<h:form>
+    <p:panelMenu style="width:300px">
+        <p:submenu label="Menu" >
+                    <p:menuitem value="Areas" outcome="/areas/List" icon="pi pi-home" />
+                    <p:menuitem value="Meseros" outcome="/meseros/List" icon="pi pi-briefcase" />
+                    <p:menuitem value="Mesas" outcome="/mesas/List" icon="pi pi-briefcase" />
+                    <p:menuitem value="Clientes" outcome="/clientes/List" icon="pi pi-file" />
+                    <p:menuitem value="Cocineros" outcome="/cocineros/List" icon="pi pi-arrow-down" />
+                    <p:menuitem value="Platos" outcome="/platos/List" icon="pi pi-briefcase" />
+                    <p:menuitem value="Facturas" outcome="/facturas/List" icon="pi pi-briefcase" />
+                    <p:menuitem value="Detalle de Facturas" outcome="/detallefactura/List" icon="pi pi-briefcase" />        
+                </p:submenu>
+    </p:panelMenu>
+</h:form>
+    </h:body>
+</html>
+
